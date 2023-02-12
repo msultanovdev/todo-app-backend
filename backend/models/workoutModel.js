@@ -14,6 +14,13 @@ const workoutSchema = new Schema({
   isDone: {
     type: Boolean,
     required: false
+  },
+  color: {
+    type: String
+  },
+  user_id: {
+    type: String,
+    required: true
   }
 }, { timestamps: true })
 
