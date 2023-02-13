@@ -26,7 +26,11 @@ TODOS:
     title: string,
     details: string,
     isDone: boolean,
-    color: string (example: "#000000")
+    color: string (example: "#000000"),
+    time: string,
+    overdue: boolean,
+    from: string,
+    assignTo: string
   }
   
   DELETE: https://rs-clone-api-t2y5.onrender.com/api/workouts/:id
