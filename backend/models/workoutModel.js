@@ -21,6 +21,18 @@ const workoutSchema = new Schema({
   user_id: {
     type: String,
     required: true
+  },
+  time: {
+    type: String
+  },
+  overdue: {
+    type: Boolean
+  },
+  from: {
+    type: String
+  },
+  assignTo: {
+    type: String
   }
 }, { timestamps: true })
 
