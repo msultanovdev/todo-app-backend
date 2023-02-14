@@ -71,4 +71,9 @@ userSchema.statics.login = async function(email, password) {
     return user;
 }
 
+userSchema.statics.getAll = async function() {
+    const users = await this.find();
+    return users;
+}
+
 module.exports = mongoose.model('User', userSchema);
