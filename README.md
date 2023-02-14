@@ -16,6 +16,8 @@ USER:
     name: string,
     password: string
   }
+  
+  GET: https://rs-clone-api-t2y5.onrender.com/api/user/users
 
 TODOS:
   GET: https://rs-clone-api-t2y5.onrender.com/api/workouts
