@@ -16,23 +16,28 @@ const workoutSchema = new Schema({
     required: false
   },
   color: {
-    type: String
+    type: String,
+    required: false
   },
   user_id: {
     type: String,
     required: true
   },
   time: {
-    type: String
+    type: String,
+    required: false
   },
   overdue: {
-    type: Boolean
+    type: Boolean,
+    required: false
   },
   from: {
-    type: String
+    type: String,
+    required: false
   },
   assignTo: {
-    type: String
+    type: String,
+    required: false
   }
 }, { timestamps: true })
 

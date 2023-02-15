@@ -18,6 +18,10 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    avatarUrl: {
+        type: String,
+        required: false
     }
 });
 
@@ -69,6 +73,14 @@ userSchema.statics.login = async function(email, password) {
     }
 
     return user;
+}
+
+userSchema.statics.updateUser = async function() {
+    const user = await this.findOne({ email });
+
+    if(!user) {
+        throw Error('No such user');
+    }
 }
 
 userSchema.statics.getAll = async function() {

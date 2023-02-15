@@ -35,6 +35,24 @@ const registerUser = async (req, res) => {
     }
 }
 
+const updateUser = async (req, res) => {
+    const { _id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(_id)) {
+        return res.status(404).json({error: 'No such user'})
+    }
+
+    const user = await User.findOneAndUpdate({_id: _id}, {
+        ...req.body
+    });
+
+    if (!user) {
+        return res.status(400).json({error: 'No such user'})
+    }
+
+    res.status(200).json(user);
+}
+
 const getUsers = async (req, res) => {
     try {
         const users = await User.getAll();
@@ -45,4 +63,4 @@ const getUsers = async (req, res) => {
     }
 }
 
-module.exports = {loginUser, registerUser, getUsers}
+module.exports = {loginUser, registerUser, getUsers, updateUser}
