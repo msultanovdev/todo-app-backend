@@ -36,21 +36,21 @@ const registerUser = async (req, res) => {
 }
 
 const updateUser = async (req, res) => {
-    const { _id } = req.params;
+    const { id } = req.params
 
-    if (!mongoose.Types.ObjectId.isValid(_id)) {
-        return res.status(404).json({error: 'No such user'})
-    }
+    // if (!mongoose.Types.ObjectId.isValid(_id)) {
+    //     return res.status(404).json({error: 'No such user'})
+    // }
 
-    const user = await User.findOneAndUpdate({_id: _id}, {
+    const user = await User.findOneAndUpdate({_id: id}, {
         ...req.body
-    });
+    })
 
     if (!user) {
         return res.status(400).json({error: 'No such user'})
     }
 
-    res.status(200).json(user);
+    res.status(200).json(user)
 }
 
 const getUsers = async (req, res) => {
