@@ -33,9 +33,6 @@ userSchema.statics.register = async function(email, name, password) {
     if(!validator.isEmail(email)) {
         throw Error('Email is invalid');
     }
-    if(!validator.isStrongPassword(password)) {
-        throw Error('Password is not strong');
-    }
     if(name.length < 3) {
         throw Error('Name must be more than 3 letters');
     }
